@@ -152,32 +152,32 @@
       <h2 class="text-3xl font-black uppercase tracking-tight mb-2">Request A Site Assessment</h2>
       <p class="text-neutral-400 text-sm mb-8">Give us your most logistically challenging broadcast scenario. We will engineer the solution.</p>
 
-      <form class="space-y-6">
+      <form action="https://formspree.io/f/xbgjaenr" method="POST" class="space-y-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label class="block text-xs font-mono uppercase tracking-wider text-neutral-400 mb-2">Contact Name / Agency</label>
-            <input type="text" placeholder="Jane Doe / Acme Media" class="w-full bg-black border border-neutral-800 rounded p-3 text-sm focus:border-orange-500 focus:outline-none text-white" required />
+            <input name="name" type="text" placeholder="Acme Media" class="w-full bg-black border border-neutral-800 rounded p-3 text-sm focus:border-orange-500 focus:outline-none text-white" required />
           </div>
           <div>
             <label class="block text-xs font-mono uppercase tracking-wider text-neutral-400 mb-2">Direct Email</label>
-            <input type="email" placeholder="jane@company.com" class="w-full bg-black border border-neutral-800 rounded p-3 text-sm focus:border-orange-500 focus:outline-none text-white" required />
+            <input name="email" type="email" placeholder="jane@company.com" class="w-full bg-black border border-neutral-800 rounded p-3 text-sm focus:border-orange-500 focus:outline-none text-white" required />
           </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label class="block text-xs font-mono uppercase tracking-wider text-neutral-400 mb-2">Target Location / Environment</label>
-            <input type="text" placeholder="e.g. 50th Fl Rooftop, Mojave, Unused Warehouse" class="w-full bg-black border border-neutral-800 rounded p-3 text-sm focus:border-orange-500 focus:outline-none text-white" required />
+            <input name="location" type="text" placeholder="e.g. 50th Fl Rooftop, Mojave, Unused Warehouse" class="w-full bg-black border border-neutral-800 rounded p-3 text-sm focus:border-orange-500 focus:outline-none text-white" required />
           </div>
           <div>
             <label class="block text-xs font-mono uppercase tracking-wider text-neutral-400 mb-2">Estimated Date / Window</label>
-            <input type="text" placeholder="e.g. Q4 2026 or Immediate" class="w-full bg-black border border-neutral-800 rounded p-3 text-sm focus:border-orange-500 focus:outline-none text-white" required />
+            <input name="date_window" type="text" placeholder="e.g. Q4 2026 or Immediate" class="w-full bg-black border border-neutral-800 rounded p-3 text-sm focus:border-orange-500 focus:outline-none text-white" required />
           </div>
         </div>
 
         <div>
           <label class="block text-xs font-mono uppercase tracking-wider text-neutral-400 mb-2">The Mission & Vision</label>
-          <textarea rows="4" placeholder="Tell us about the broadcast: how many cameras, audience size, stream destinations, power/connectivity constraints..." class="w-full bg-black border border-neutral-800 rounded p-3 text-sm focus:border-orange-500 focus:outline-none text-white"></textarea>
+          <textarea name="mission_details" rows="4" placeholder="Tell us about the broadcast: how many cameras, audience size, stream destinations, power/connectivity constraints..." class="w-full bg-black border border-neutral-800 rounded p-3 text-sm focus:border-orange-500 focus:outline-none text-white"></textarea>
         </div>
 
         <button type="submit" class="w-full bg-orange-500 hover:bg-orange-400 text-black font-mono font-bold uppercase tracking-wider py-4 rounded transition">
