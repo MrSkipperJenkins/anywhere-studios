@@ -4,190 +4,264 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ANYWHERE STUDIOS | Mission-Critical Broadcast. Anywhere on Earth.</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @keyframes pulse-fast {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-    .animate-live {
-      animation: pulse-fast 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="bg-black text-neutral-100 antialiased selection:bg-orange-500 selection:text-black font-sans">
+<body>
 
-  <aside aria-label="Operational status" class="bg-neutral-900 border-b border-neutral-800 text-[11px] font-mono text-neutral-400 py-1.5 px-6 flex justify-between items-center tracking-wider">
-    <div class="flex items-center gap-2">
-      <span class="inline-block w-2 h-2 rounded-full bg-red-600 animate-live"></span>
-      <span class="text-neutral-200 font-bold uppercase tracking-widest">Tally: Live</span>
-      <span class="hidden sm:inline text-neutral-600">|</span>
-      <span class="hidden sm:inline">Global Uplink: Operational</span>
+  <!-- Operational Status Bar -->
+  <aside aria-label="Operational status" class="status-bar">
+    <div class="status-left">
+      <span class="pulse-dot"></span>
+      <span class="status-tally">Tally: Live</span>
+      <span class="status-divider status-hide-mobile">|</span>
+      <span class="status-hide-mobile">Global Uplink: Operational</span>
     </div>
-    <div class="text-neutral-400">
+    <div class="status-hide-mobile text-muted">
       <span>Zero-Fail Broadcast Deployments</span>
     </div>
   </aside>
 
-  <nav class="border-b border-neutral-800 bg-black/90 backdrop-blur-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-7 h-7 bg-orange-500 rounded flex items-center justify-center font-black text-black text-sm tracking-tighter">
-          TX
-        </div>
-        <span class="text-xl font-extrabold tracking-tight uppercase">Anywhere<span class="text-orange-500">Studios</span></span>
+  <!-- Sticky Navigation Header -->
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <div class="brand-logo">
+        <div class="tx-badge">TX</div>
+        <span class="brand-title">Anywhere<span class="text-orange">Studios</span></span>
       </div>
-      <div class="hidden md:flex gap-8 text-xs font-mono uppercase tracking-widest text-neutral-400">
-        <a href="#ethos" class="hover:text-orange-400 transition">The Ethos</a>
-        <a href="#capabilities" class="hover:text-orange-400 transition">Deployments</a>
-        <a href="#locations" class="hover:text-orange-400 transition">Zero Limitations</a>
+      <div class="nav-links">
+        <a href="#ethos">The Ethos</a>
+        <a href="#operators">Operators</a>
+        <a href="#locations">Zero Limitations</a>
       </div>
-      <a href="#dispatch" class="bg-orange-500 hover:bg-orange-400 text-black px-5 py-2 rounded text-xs font-mono font-bold tracking-wider uppercase transition">Deploy A Studio</a>
+      <a href="#dispatch" class="btn-primary">Deploy A Studio</a>
     </div>
   </nav>
 
-  <header class="relative border-b border-neutral-800 pt-24 pb-24 lg:pt-36 lg:pb-32 overflow-hidden">
-    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#f97316_1px,transparent_1px)] [background-size:24px_24px]"></div>
-    
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded border border-orange-500/40 bg-orange-500/10 text-orange-400 text-xs font-mono uppercase tracking-widest mb-6">
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-radar-grid"></div>
+    <div class="container" style="position: relative; z-index: 10;">
+      <div class="pill-tag">
         <span>No Studio? No Problem. We Bring The Studio.</span>
       </div>
       
-      <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.95] max-w-5xl mb-8">
+      <h1 class="hero-headline">
         Live TV Studios.<br />
-        <span class="text-neutral-500">Anywhere. Everywhere.</span><br />
-        <span class="text-orange-500">Zero Excuses.</span>
+        <span class="text-dim">Anywhere. Everywhere.</span><br />
+        <span class="text-orange">Zero Excuses.</span>
       </h1>
       
-      <p class="text-lg sm:text-2xl text-neutral-300 max-w-2xl font-normal leading-relaxed mb-10">
+      <p class="hero-description">
         From high-rise corporate executive floors and subterranean warehouses to open desert summits and fast-moving transit. If you can dream the broadcast, we engineer the signal.
       </p>
 
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a href="#dispatch" class="bg-orange-500 hover:bg-orange-400 text-black font-mono font-bold uppercase tracking-wider text-sm px-8 py-4 rounded text-center transition">
+      <div class="hero-actions">
+        <a href="#dispatch" class="btn-primary btn-hero-primary">
           Challenge Us With Your Site
         </a>
-        <a href="#capabilities" class="border border-neutral-700 hover:border-neutral-400 font-mono text-sm uppercase tracking-wider text-neutral-200 px-8 py-4 rounded text-center transition">
-          View Tactical Rigs & Specs
+        <a href="#operators" class="btn-hero-secondary">
+          Meet The Operators
         </a>
       </div>
     </div>
   </header>
 
-  <section id="ethos" class="border-b border-neutral-800 bg-neutral-950 py-20">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-12">
-      <div>
-        <span class="text-orange-500 font-mono text-xs uppercase tracking-widest block mb-2">01 / The Standard</span>
-        <h2 class="text-2xl font-bold uppercase tracking-tight mb-3">Enterprise Polish, Field Mentality</h2>
-        <p class="text-neutral-400 text-sm leading-relaxed">
-          Traditional corporate AV waits for an air-conditioned ballroom. We build network-grade broadcast environments inside unfinished builds, shipping containers, and active factory floors within 6 hours.
-        </p>
-      </div>
+  <!-- The Ethos Section -->
+  <section id="ethos" class="section section-dark">
+    <div class="container">
+      <div class="grid-3">
+        <div>
+          <span class="ethos-step">01 / The Standard</span>
+          <h2 class="ethos-heading">Enterprise Polish, Field Mentality</h2>
+          <p class="ethos-body">
+            Traditional corporate AV waits for an air-conditioned ballroom. We build network-grade broadcast environments inside unfinished builds, shipping containers, and active factory floors within 6 hours.
+          </p>
+        </div>
 
-      <div>
-        <span class="text-orange-500 font-mono text-xs uppercase tracking-widest block mb-2">02 / Redundancy</span>
-        <h2 class="text-2xl font-bold uppercase tracking-tight mb-3">Air-Gapped & Bonded Signal</h2>
-        <p class="text-neutral-400 text-sm leading-relaxed">
-          Zero public internet? We deploy multi-carrier cellular bonding, high-bandwidth LEO satellite arrays, and isolated power plants so your mission-critical live stream never drops a single frame.
-        </p>
-      </div>
+        <div>
+          <span class="ethos-step">02 / Redundancy</span>
+          <h2 class="ethos-heading">Air-Gapped & Bonded Signal</h2>
+          <p class="ethos-body">
+            Zero public internet? We deploy multi-carrier cellular bonding, high-bandwidth LEO satellite arrays, and isolated power plants so your mission-critical live stream never drops a single frame.
+          </p>
+        </div>
 
-      <div>
-        <span class="text-orange-500 font-mono text-xs uppercase tracking-widest block mb-2">03 / The Crews</span>
-        <h2 class="text-2xl font-bold uppercase tracking-tight mb-3">Elite Show-Runners</h2>
-        <p class="text-neutral-400 text-sm leading-relaxed">
-          Backed by technical directors, comms engineers, and cinematographers accustomed to the chaos of high-stakes live television. When the unexpected happens, we solve it live on air.
-        </p>
+        <div>
+          <span class="ethos-step">03 / The Crews</span>
+          <h2 class="ethos-heading">Elite Show-Runners</h2>
+          <p class="ethos-body">
+            Backed by technical directors, comms engineers, and cinematographers accustomed to the chaos of high-stakes live television. When the unexpected happens, we solve it live on air.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="locations" class="border-b border-neutral-800 py-24">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+  <!-- Operators / Field Command Section -->
+  <section id="operators" class="section">
+    <div class="container">
+      <div class="section-header-split">
         <div>
-          <span class="text-orange-500 font-mono text-xs uppercase tracking-widest block mb-2">Location Index</span>
-          <h2 class="text-4xl font-extrabold uppercase tracking-tight">Tell Us Where. We Make It A Control Room.</h2>
+          <span class="section-label">Field Command</span>
+          <h2 class="section-title">Emmy-Winning Tech & Experiential Leadership</h2>
         </div>
-        <p class="text-neutral-400 text-sm font-mono max-w-md">
+        <p class="font-mono text-muted" style="max-width: 440px; font-size: 13px; line-height: 1.6;">
+          When there are zero second chances and no rewind buttons, you need leaders who have orchestrated hundreds of high-wire live broadcasts under pressure.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <!-- Operator 1: Benjamin Bauer -->
+        <article class="operator-card">
+          <div>
+            <div class="operator-header">
+              <span class="operator-callsign">[CHIEF STUDIO ENGINEER / TECHNICAL DIRECTOR]</span>
+              <h3 class="operator-name">Benjamin Bauer, CTS</h3>
+              <div class="operator-accolade">
+                <span>★ Emmy® Award Winner</span>
+                <span class="text-dim">//</span>
+                <span>CTS & Dante Certified</span>
+              </div>
+            </div>
+            <p class="operator-bio">
+              Specializing in end-to-end live stream architecture and high-stakes signal routing where there are no second chances. A seasoned Technical Director and Engineer in Charge (EIC) with an Electrical & Computer Engineering background from UT Austin, Benjamin won a News & Documentary Emmy for pioneering live on-air virtual reality broadcasting at The Weather Channel. He bridges traditional baseband video with cutting-edge IP workflows to deploy zero-downtime broadcast pipelines for Fortune 100 enterprise events globally.
+            </p>
+          </div>
+          <div class="operator-creds">
+            <span class="operator-creds-title">Core Disciplines & Credentials</span>
+            <div class="creds-tags">
+              <span class="cred-tag">EIC & Technical Direction</span>
+              <span class="cred-tag">Live IP Video Routing</span>
+              <span class="cred-tag">LEO & Bonded Uplinks</span>
+              <span class="cred-tag">500+ Live Newscasts Directed</span>
+              <span class="cred-tag">Fortune 100 Broadcasts</span>
+              <span class="cred-tag">Dante L2 & CTS Certified</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Operator 2: Cary Henderson -->
+        <article class="operator-card">
+          <div>
+            <div class="operator-header">
+              <span class="operator-callsign">[EXECUTIVE PRODUCER / PRODUCTION LEAD]</span>
+              <h3 class="operator-name">Cary Henderson</h3>
+              <div class="operator-accolade">
+                <span>★ Experiential & Activations</span>
+                <span class="text-dim">//</span>
+                <span>Production Management</span>
+              </div>
+            </div>
+            <p class="operator-bio">
+              An adaptable, high-impact creative producer with a proven track record delivering massive experiential activations and complex content productions. With over seven years leading marquee creative projects at Kamp Grizzly and managing multi-million-dollar production lifecycles, Cary turns raw spaces and unpredictable venues into polished broadcast environments. Having spearheaded activations for McDonald's, Logitech, Adidas, and Uber Eats, he ensures field operations run on time, on budget, and capture global attention.
+            </p>
+          </div>
+          <div class="operator-creds">
+            <span class="operator-creds-title">Core Disciplines & Credentials</span>
+            <div class="creds-tags">
+              <span class="cred-tag">Experiential Activations</span>
+              <span class="cred-tag">Raw Venue Transformations</span>
+              <span class="cred-tag">Field Team Logistics</span>
+              <span class="cred-tag">Vendor & Contractor Management</span>
+              <span class="cred-tag">Budget Stewardship ($20K–$3M)</span>
+              <span class="cred-tag">400M+ Impressions Delivered</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locations Section -->
+  <section id="locations" class="section section-dark">
+    <div class="container">
+      <div class="section-header-split">
+        <div>
+          <span class="section-label">Location Index</span>
+          <h2 class="section-title">Tell Us Where. We Make It A Control Room.</h2>
+        </div>
+        <p class="font-mono text-muted" style="max-width: 440px; font-size: 13px; line-height: 1.6;">
           Self-contained flight packs, silent battery backups, and rapid-deployment acoustic infrastructure.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="border border-neutral-800 p-6 rounded bg-neutral-950/60 hover:border-orange-500/50 transition">
-          <div class="text-neutral-600 font-mono text-xs mb-4">[SITE ALPHA]</div>
-          <h3 class="text-lg font-bold uppercase mb-2">Empty Raw Real Estate</h3>
-          <p class="text-neutral-400 text-xs leading-relaxed">Bare concrete, no wiring, no lights. We build full multi-camera studio sets with pop-up acoustic walls and professional studio lighting grids.</p>
+      <div class="grid-4">
+        <div class="tactical-card">
+          <div class="card-site-tag">[SITE ALPHA]</div>
+          <h3 class="card-heading">Empty Raw Real Estate</h3>
+          <p class="card-body">Bare concrete, no wiring, no lights. We build full multi-camera studio sets with pop-up acoustic walls and professional studio lighting grids.</p>
         </div>
 
-        <div class="border border-neutral-800 p-6 rounded bg-neutral-950/60 hover:border-orange-500/50 transition">
-          <div class="text-neutral-600 font-mono text-xs mb-4">[SITE BRAVO]</div>
-          <h3 class="text-lg font-bold uppercase mb-2">Off-Grid & Remote</h3>
-          <p class="text-neutral-400 text-xs leading-relaxed">Deserts, mountain retreats, or marine vessels. Fully independent power generation paired with bonded satellite arrays transmitting 4K broadcast feeds globally.</p>
+        <div class="tactical-card">
+          <div class="card-site-tag">[SITE BRAVO]</div>
+          <h3 class="card-heading">Off-Grid & Remote</h3>
+          <p class="card-body">Deserts, mountain retreats, or marine vessels. Fully independent power generation paired with bonded satellite arrays transmitting 4K broadcast feeds globally.</p>
         </div>
 
-        <div class="border border-neutral-800 p-6 rounded bg-neutral-950/60 hover:border-orange-500/50 transition">
-          <div class="text-neutral-600 font-mono text-xs mb-4">[SITE CHARLIE]</div>
-          <h3 class="text-lg font-bold uppercase mb-2">C-Suite & Headquarters</h3>
-          <p class="text-neutral-400 text-xs leading-relaxed">Transforming ordinary executive boardrooms into broadcast stages overnight for global town halls, public earnings calls, and product unveils.</p>
+        <div class="tactical-card">
+          <div class="card-site-tag">[SITE CHARLIE]</div>
+          <h3 class="card-heading">C-Suite & Headquarters</h3>
+          <p class="card-body">Transforming ordinary executive boardrooms into broadcast stages overnight for global town halls, public earnings calls, and product unveils.</p>
         </div>
 
-        <div class="border border-neutral-800 p-6 rounded bg-neutral-950/60 hover:border-orange-500/50 transition">
-          <div class="text-neutral-600 font-mono text-xs mb-4">[SITE DELTA]</div>
-          <h3 class="text-lg font-bold uppercase mb-2">Experiential Pop-Ups</h3>
-          <p class="text-neutral-400 text-xs leading-relaxed">Festival activations, subterranean galleries, and retail launches where entertainment value, custom fabrication, and live multi-stream feeds collide.</p>
+        <div class="tactical-card">
+          <div class="card-site-tag">[SITE DELTA]</div>
+          <h3 class="card-heading">Experiential Pop-Ups</h3>
+          <p class="card-body">Festival activations, subterranean galleries, and retail launches where entertainment value, custom fabrication, and live multi-stream feeds collide.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="dispatch" class="py-24 max-w-4xl mx-auto px-6">
-    <div class="border border-orange-500/40 bg-neutral-950 p-8 md:p-12 rounded-lg relative overflow-hidden">
-      <div class="absolute top-0 right-0 bg-orange-500 text-black font-mono text-[10px] font-black uppercase px-4 py-1 tracking-widest">
-        Rapid Dispatch Desk
+  <!-- Rapid Dispatch Section -->
+  <section id="dispatch" class="section">
+    <div class="container">
+      <div class="dispatch-wrapper">
+        <div class="dispatch-box">
+          <div class="dispatch-badge">Rapid Dispatch Desk</div>
+          
+          <h2 class="section-title" style="margin-bottom: 0.5rem; font-size: 1.85rem;">Request A Site Assessment</h2>
+          <p class="text-muted" style="font-size: 14px; margin-bottom: 2rem;">Give us your most logistically challenging broadcast scenario. We will engineer the solution.</p>
+
+          <form action="https://formspree.io/f/xbgjaenr" method="POST">
+            <div class="form-grid">
+              <div>
+                <label class="form-label">Contact Name / Agency</label>
+                <input name="name" type="text" placeholder="Jane Doe / Acme Media" class="form-input" required />
+              </div>
+              <div>
+                <label class="form-label">Direct Email</label>
+                <input name="email" type="email" placeholder="jane@company.com" class="form-input" required />
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div>
+                <label class="form-label">Target Location / Environment</label>
+                <input name="location" type="text" placeholder="e.g. 50th Fl Rooftop, Mojave, Unused Warehouse" class="form-input" required />
+              </div>
+              <div>
+                <label class="form-label">Estimated Date / Window</label>
+                <input name="date_window" type="text" placeholder="e.g. Q4 2026 or Immediate" class="form-input" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">The Mission & Vision</label>
+              <textarea name="mission_details" rows="4" placeholder="Tell us about the broadcast: how many cameras, audience size, stream destinations, power/connectivity constraints..." class="form-textarea"></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              Transmit Requirements
+            </button>
+          </form>
+        </div>
       </div>
-      
-      <h2 class="text-3xl font-black uppercase tracking-tight mb-2">Request A Site Assessment</h2>
-      <p class="text-neutral-400 text-sm mb-8">Give us your most logistically challenging broadcast scenario. We will engineer the solution.</p>
-
-      <form action="https://formspree.io/f/xbgjaenr" method="POST" class="space-y-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label class="block text-xs font-mono uppercase tracking-wider text-neutral-400 mb-2">Contact Name / Agency</label>
-            <input name="name" type="text" placeholder="Acme Media" class="w-full bg-black border border-neutral-800 rounded p-3 text-sm focus:border-orange-500 focus:outline-none text-white" required />
-          </div>
-          <div>
-            <label class="block text-xs font-mono uppercase tracking-wider text-neutral-400 mb-2">Direct Email</label>
-            <input name="email" type="email" placeholder="jane@company.com" class="w-full bg-black border border-neutral-800 rounded p-3 text-sm focus:border-orange-500 focus:outline-none text-white" required />
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label class="block text-xs font-mono uppercase tracking-wider text-neutral-400 mb-2">Target Location / Environment</label>
-            <input name="location" type="text" placeholder="e.g. 50th Fl Rooftop, Mojave, Unused Warehouse" class="w-full bg-black border border-neutral-800 rounded p-3 text-sm focus:border-orange-500 focus:outline-none text-white" required />
-          </div>
-          <div>
-            <label class="block text-xs font-mono uppercase tracking-wider text-neutral-400 mb-2">Estimated Date / Window</label>
-            <input name="date_window" type="text" placeholder="e.g. Q4 2026 or Immediate" class="w-full bg-black border border-neutral-800 rounded p-3 text-sm focus:border-orange-500 focus:outline-none text-white" required />
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-xs font-mono uppercase tracking-wider text-neutral-400 mb-2">The Mission & Vision</label>
-          <textarea name="mission_details" rows="4" placeholder="Tell us about the broadcast: how many cameras, audience size, stream destinations, power/connectivity constraints..." class="w-full bg-black border border-neutral-800 rounded p-3 text-sm focus:border-orange-500 focus:outline-none text-white"></textarea>
-        </div>
-
-        <button type="submit" class="w-full bg-orange-500 hover:bg-orange-400 text-black font-mono font-bold uppercase tracking-wider py-4 rounded transition">
-          Transmit Requirements
-        </button>
-      </form>
     </div>
   </section>
 
-  <footer class="border-t border-neutral-900 py-10 text-center text-xs font-mono text-neutral-500">
+  <!-- Footer -->
+  <footer class="site-footer">
     ANYWHERE STUDIOS // NO BOUNDARIES. BROADCAST EVERYWHERE.
   </footer>
 
